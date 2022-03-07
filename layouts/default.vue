@@ -1,19 +1,26 @@
 <template>
-  <v-app>
-    <div class="bg text-center">
-      <span class="white--text">
-        <v-container>
-          <Nuxt />
-        </v-container>
-      </span>
-    </div>
-  </v-app>
-</template>
+  <div>
+    <v-card
+      class="overflow-hidden"
+      color="transparent"
+    >
+      <v-app-bar
+        absolute
+        elevate-on-scroll
+      >
+        <v-app-bar-nav-icon @click="drawer = true" />
 
-// แบบเขียนcss
-<style>
-.bg {
-  /* background-color: #0989ff; */
-  background: linear-gradient(to top right,#5842ff,#0989ff,#038fff);
+        <v-toolbar-title>รายชื่อนักเรียนทั้งหมด</v-toolbar-title>
+      </v-app-bar>
+      <Nuxt />
+    </v-card>
+  </div>
+</template>
+<script>
+export default {
+  data: () => ({
+    drawer: false,
+    group: null
+  })
 }
-</style>
+</script>
